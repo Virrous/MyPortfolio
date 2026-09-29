@@ -5,7 +5,7 @@ export const siteConfig = {
   companyName: "Nepsof Enterprise Pvt. Ltd.",
   companyBrand: "Nepsof",
   companyUrl: "https://nepsof.com",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://ashespokhrel.com").replace(
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://ashespokhrel.com.np").replace(
     /\/$/,
     "",
   ),
