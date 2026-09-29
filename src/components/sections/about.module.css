@@ -1,0 +1,86 @@
+/* Centred prose column, so the section reads top to bottom rather than as two
+   competing columns. */
+.prose {
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.paragraph {
+  color: var(--fg-muted);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.paragraph + .paragraph {
+  margin-top: 1.5rem;
+}
+
+.card {
+  max-width: 42rem;
+  margin: 3rem auto 0;
+  padding: 1.75rem;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift);
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 2.25rem;
+  }
+}
+
+.cardEyebrow {
+  justify-content: center;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+.step {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.stepIndex {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-on-surface);
+}
+
+.stepTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.stepDetail {
+  margin-top: 0.1875rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--fg-muted);
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--fg);
+  transition: color var(--dur) ease;
+}
+
+.cardLink:hover {
+  color: var(--accent-on-surface);
+}

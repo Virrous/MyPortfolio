@@ -1,0 +1,207 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: 3.5rem 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding-block: 4.5rem 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: 6rem 7rem;
+  }
+}
+
+/* Soft brand wash behind the heading. Uses theme tokens so it stays subtle in
+   light mode and glows slightly in dark. */
+.wash {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: -1;
+  height: 34rem;
+  pointer-events: none;
+  background: radial-gradient(
+    60rem 30rem at 50% -12%,
+    var(--accent-soft),
+    transparent 70%
+  );
+}
+
+.intro {
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* The shared eyebrow centres its content for section headers; the hero's own
+   eyebrow needs the same treatment since it sits in a centred column. */
+.introEyebrow {
+  justify-content: center;
+}
+
+.title {
+  margin-top: 1.25rem;
+}
+
+.role {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+@media (min-width: 640px) {
+  .role {
+    font-size: 1.3125rem;
+  }
+}
+
+.disciplines {
+  margin-top: 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+.statement {
+  margin-top: 2rem;
+  margin-inline: auto;
+  max-width: 36rem;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--fg-muted);
+}
+
+@media (min-width: 640px) {
+  .statement {
+    font-size: 1.1875rem;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .actions {
+    flex-direction: row;
+  }
+}
+
+/*
+ * Portrait, centred and full attention.
+ *
+ * The source (public/photo.jpg) is 1600x1141, a 1.4:1 landscape frame, so the
+ * card is 7:5. Cropping that aggressively enough for a 4:5 portrait card would
+ * throw away most of the image, so the frame sits close to the source ratio
+ * and the photo is barely cropped at all.
+ */
+.portrait {
+  margin: 3.5rem auto 0;
+  max-width: 34rem;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 7 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2xl);
+  background-color: var(--surface-sunken);
+  box-shadow: var(--shadow-card);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Hairline inner edge, keeps the photo from bleeding into the card radius. */
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.04);
+  pointer-events: none;
+}
+
+/* Signature block under the photo, replacing the old name/role line. */
+.signature {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.signatureName {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+.signatureMeta {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+  transition: color var(--dur) ease;
+}
+
+.socialLink:hover {
+  color: var(--fg);
+}
+
+.socialIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--fg-subtle);
+  transition: color var(--dur) ease;
+}
+
+.socialLink:hover .socialIcon {
+  color: var(--accent-on-surface);
+}
+
+.socialArrow {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--line-strong);
+  transition:
+    color var(--dur) ease,
+    transform var(--dur) var(--ease);
+}
+
+.socialLink:hover .socialArrow {
+  color: var(--accent);
+  transform: translate(1px, -1px);
+}

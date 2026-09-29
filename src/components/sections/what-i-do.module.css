@@ -1,0 +1,93 @@
+/* Hairline-separated card grid, matching the reference treatment. The 1px gap
+   over a line-coloured background produces dividers without extra borders. */
+.grid {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  background-color: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.cell {
+  padding: 1.75rem;
+  background-color: var(--surface-raised);
+  transition: background-color var(--dur) ease;
+}
+
+@media (min-width: 640px) {
+  .cell {
+    padding: 2rem;
+  }
+}
+
+.cell:hover {
+  background-color: var(--surface-sunken);
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-on-surface);
+}
+
+.title {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+.description {
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--fg-muted);
+}
+
+/* Closing statement, inverted so the section ends on a heavier note. */
+.cellStatement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem;
+  background-color: var(--surface-inverse);
+  color: var(--fg-on-inverse);
+}
+
+@media (min-width: 640px) {
+  .cellStatement {
+    padding: 2rem;
+  }
+}
+
+.statementTitle {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.statementBody {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--fg-on-inverse-muted);
+}
