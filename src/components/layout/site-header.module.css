@@ -1,0 +1,108 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--line);
+  background-color: color-mix(in srgb, var(--surface) 85%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--header-h);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: var(--radius-sm);
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-inverse);
+  color: var(--fg-on-inverse);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brandName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+.brandRole {
+  margin-top: 0.3125rem;
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  height: 2.25rem;
+  padding-inline: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+  transition: color var(--dur) ease;
+}
+
+.navLink:hover {
+  color: var(--fg);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contactLink {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .contactLink {
+    display: inline-flex;
+  }
+}

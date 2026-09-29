@@ -1,0 +1,174 @@
+
+.section {
+  --contact-band: #0b100e;
+  --contact-cell: rgb(255 255 255 / 0.025);
+  --contact-cell-hover: rgb(255 255 255 / 0.055);
+  position: relative;
+  padding-block: 4.5rem;
+  background-color: var(--contact-band);
+  color: var(--fg);
+  border-top: 1px solid var(--line);
+  /* Fades the band's own edge into the page so the boundary is felt, not seen. */
+  background-image: radial-gradient(
+    70rem 26rem at 50% 0%,
+    rgb(22 163 74 / 0.07),
+    transparent 72%
+  );
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-block: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 7rem;
+  }
+}
+
+.intro {
+  max-width: 42rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  justify-content: center;
+  color: var(--fg-muted);
+}
+
+.title {
+  margin-top: 1.125rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 5vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--fg);
+}
+
+.lede {
+  margin-top: 1.25rem;
+  margin-inline: auto;
+  max-width: 36rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--fg-muted);
+}
+
+/* Channels laid out as an even centred row, no left rail. */
+.channels {
+  display: grid;
+  gap: 1px;
+  max-width: 40rem;
+  margin: 2.5rem auto 0;
+  overflow: hidden;
+  background-color: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 768px) {
+  .channels {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.channelCell {
+  background-color: var(--contact-cell);
+}
+
+.channelLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition: background-color var(--dur) ease;
+}
+
+.channelLink:hover {
+  background-color: var(--contact-cell-hover);
+}
+
+.channelIcon {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--fg-muted);
+  transition: color var(--dur) ease;
+}
+
+.channelLink:hover .channelIcon {
+  color: var(--accent-on-surface);
+}
+
+.channelLabel {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+.channelValue {
+  font-size: 0.875rem;
+  color: var(--fg);
+}
+
+.signature {
+  margin-top: 2.5rem;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+.formCard {
+  position: relative;
+  max-width: 42rem;
+  margin: 2.5rem auto 0;
+  padding: 1.5rem;
+  background-color: var(--surface-raised);
+  background-image: radial-gradient(
+    120% 90% at 50% 0%,
+    rgb(53 184 98 / 0.08),
+    transparent 62%
+  );
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: #0000;
+  color: var(--fg);
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .formCard {
+    padding: 2.5rem;
+  }
+}
+
+.formEyebrow {
+  justify-content: center;
+}
+
+.formTitle {
+  margin-top: 0.875rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .formTitle {
+    font-size: 1.75rem;
+  }
+}
+
+.form {
+  margin-top: 2rem;
+}

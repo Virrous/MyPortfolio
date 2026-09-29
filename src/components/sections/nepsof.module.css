@@ -1,0 +1,145 @@
+.chain {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .chain {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.chainItem {
+  position: relative;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift);
+  transition: border-color var(--dur) ease;
+}
+
+.chainItem:hover {
+  border-color: var(--line-strong);
+}
+
+.step {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+.chainLabel {
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+.chainDetail {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--fg-muted);
+}
+
+.chainArrow {
+  position: absolute;
+  top: 50%;
+  right: -0.75rem;
+  z-index: 1;
+  display: none;
+  transform: translateY(-50%);
+  color: var(--line-strong);
+}
+
+@media (min-width: 768px) {
+  .chainArrow {
+    display: block;
+  }
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  background-color: var(--surface-inverse);
+  border-radius: var(--radius-lg);
+  color: var(--fg-on-inverse);
+}
+
+@media (min-width: 640px) {
+  .cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.25rem;
+  }
+}
+
+.ctaName {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  .ctaName {
+    font-size: 1.875rem;
+  }
+}
+
+.ctaBody {
+  margin-top: 0.75rem;
+  max-width: 36rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--fg-on-inverse-muted);
+}
+
+.ctaLink {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3rem;
+  padding-inline: 1.5rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--surface-inverse-raised);
+  background-color: var(--brand-500);
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: background-color var(--dur) ease;
+}
+
+.ctaLink:hover {
+  background-color: var(--accent-on-inverse);
+  color: #ffffff;
+}
+
+.footnote {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+.footnoteLink {
+  font-weight: 600;
+  color: var(--fg);
+  transition: color var(--dur) ease;
+}
+
+.footnoteLink:hover {
+  color: var(--accent-on-surface);
+}
